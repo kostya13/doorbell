@@ -74,9 +74,9 @@ reset:
 	outi	DDRB,  0b010010		;/
 
 	outi	PLLCSR, 0b00000110	;Initialize TC1 in 250 kHz fast PWM mode.
-;	outi	TCCR1,  0b01100001	;Connect TC1 to OC1A
-;	outi	GTCCR,  0b01100000	;Connect TC1 to OC1B
-
+	outi	TCCR1,  0b01100001	;Connect TC1 to OC1A
+	outi	GTCCR,  0b01100000	;Connect TC1 to OC1B
+ 
 	outi	OCR0A, 62		;Initalize TC0 in 32 kHz interval timer.
 	outi	TCCR0A, 0b00000010
 	outi	TCCR0B, 0b00000010
@@ -84,14 +84,11 @@ reset:
 
 wait:
         cli
-	outi	TCCR1,  0	
-	outi	GTCCR,  0	
-        in r25, PINB             
-        sbrc r25, 0
+        in r25, PINB     ; wait key press        
+        sbrc r25, 0 
         rjmp wait
-	outi	TCCR1,  0b01100001	;Connect TC1 to OC1A
-	outi	GTCCR,  0b01100000	;Connect TC1 to OC1B
-
+        sbrs r25, 2
+        rjmp wait
 
 start_play:
 	ldiw	Z, score*2
@@ -101,13 +98,8 @@ start_play:
 	sei
 
 pl_next:
-        in r25, PINB
-        sbrs r25, 2
-        rjmp wait
-
-
 	lpmw	B, Z+
-	 rcall	drv_decay
+        rcall	drv_decay
 	cli
 	cpw	_Tmr, B
 	sei
@@ -117,6 +109,12 @@ pl_note:
 	lpm	CL, Z+
 	cpi	CL, EoS
 	breq	wait
+
+        in r16, PINB ; if key pressed - stop
+        sbrs r16, 2
+        rjmp wait
+
+
 	mov	AL, CL
 	rcall	note_on
 	andi	CL, en
