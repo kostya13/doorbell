@@ -60,6 +60,7 @@ Notes:	.byte	(2+3+1+1+1+1)*N_NOTE
 ; Program Code
 
 reset:
+
 	clr	_0
 	ldiw	X, RAMTOP		;Clear RAM
 	ldi	AL, 0			;
@@ -69,7 +70,7 @@ reset:
 
 ;	outi	OSCCAL, 172		;Adjust OSCCAL if needed.
 
-	outi	PORTB, 0b001101		;Initalize Port B
+	outi	PORTB, 0b101101		;Initalize Port B
 	outi	DDRB,  0b010010		;/
 
 	outi	PLLCSR, 0b00000110	;Initialize TC1 in 250 kHz fast PWM mode.
@@ -81,15 +82,26 @@ reset:
 	outi	TCCR0B, 0b00000010
 	outi	TIMSK, (1<<OCIE0A)
 
+wait:
+        cli
+        in r25, PINB             
+        sbrc r25, 0
+        rjmp wait
+
 
 start_play:
 	ldiw	Z, score*2
-	cli
+;	cli
 	clrw	_Tmr
 	clr	_TmrS
 	sei
 
 pl_next:
+        in r25, PINB
+        sbrs r25, 2
+        rjmp wait
+
+
 	lpmw	B, Z+
 	 rcall	drv_decay
 	cli
@@ -100,9 +112,9 @@ pl_next:
 pl_note:
 	lpm	CL, Z+
 	cpi	CL, EoS
-	breq	start_play
+	breq	wait
 	mov	AL, CL
-	 rcall	note_on
+	rcall	note_on
 	andi	CL, en
 	breq	pl_note
 	rjmp	pl_next
