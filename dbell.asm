@@ -87,7 +87,7 @@ wait:
         in r25, PINB     ; wait key press        
         sbrc r25, 0 
         rjmp wait
-        sbrs r25, 2
+        sbrs r25, 2 ; don't start if door open
         rjmp wait
 
 start_play:
