@@ -52,8 +52,9 @@
 	.db 56, 23, Gis5|en, 75, 23, A6, A3|en, 93, 23, H6|en, 112, 23, Cis6, E3|en, 131, 23
 	.db D6|en, 150, 23, E6, A4|en, 168, 23, Cis6|en, 187, 23, H6, E3|en, 206, 23, A6|en, 225
 	.db 23, Gis5, E2|en, 6, 24, E5, H3|en, 44, 24, H5, E3|en, 81, 24, Gis4, Gis3|en, 119
-	.db 24, E4, H4|en ;, 125, 25, A5|en
-	.db 00, 25, EoS|en
+	.db 24, E4, H4|en
+;, 125, 25, A5|en
+	.db 200, 25, EoS|en
 
 ;, 144, 25, Cis5|en,
 
