@@ -74,8 +74,8 @@ reset:
 	outi	DDRB,  0b010010		;/
 
 	outi	PLLCSR, 0b00000110	;Initialize TC1 in 250 kHz fast PWM mode.
-	outi	TCCR1,  0b01100001	;Connect TC1 to OC1A
-	outi	GTCCR,  0b01100000	;Connect TC1 to OC1B
+;	outi	TCCR1,  0b01100001	;Connect TC1 to OC1A
+;	outi	GTCCR,  0b01100000	;Connect TC1 to OC1B
 
 	outi	OCR0A, 62		;Initalize TC0 in 32 kHz interval timer.
 	outi	TCCR0A, 0b00000010
@@ -84,9 +84,13 @@ reset:
 
 wait:
         cli
+	outi	TCCR1,  0	
+	outi	GTCCR,  0	
         in r25, PINB             
         sbrc r25, 0
         rjmp wait
+	outi	TCCR1,  0b01100001	;Connect TC1 to OC1A
+	outi	GTCCR,  0b01100000	;Connect TC1 to OC1B
 
 
 start_play:
