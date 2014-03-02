@@ -70,7 +70,7 @@ reset:
 
 ;	outi	OSCCAL, 172		;Adjust OSCCAL if needed.
 
-	outi	PORTB, 0b101101		;Initalize Port B
+	outi	PORTB, 0b001101		;Initalize Port B
 	outi	DDRB,  0b010010		;/
 
 	outi	PLLCSR, 0b00000110	;Initialize TC1 in 250 kHz fast PWM mode.
@@ -85,9 +85,9 @@ reset:
 wait:
         cli
         in r25, PINB     ; wait key press        
-        sbrc r25, 0 
+        sbrs r25, 0 
         rjmp wait
-        sbrs r25, 2 ; don't start if door open
+        sbrc r25, 2 ; don't start if door open
         rjmp wait
 
 start_play:
@@ -111,7 +111,7 @@ pl_note:
 	breq	wait
 
         in r16, PINB ; if key pressed - stop
-        sbrs r16, 2
+        sbrc r16, 2
         rjmp wait
 
 
