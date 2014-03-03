@@ -1,0 +1,66 @@
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 03.03.2014 18:15:22
+
+BeginCmp
+TimeStamp = /53144C5D;
+Reference = DD1;
+ValeurCmp = ATTINY45;
+IdModule  = DIP-8__300_ELL;
+EndCmp
+
+BeginCmp
+TimeStamp = /53144C3F;
+Reference = R1;
+ValeurCmp = RES;
+IdModule  = R4-5;
+EndCmp
+
+BeginCmp
+TimeStamp = /53145720;
+Reference = R2;
+ValeurCmp = RES;
+IdModule  = R4-5;
+EndCmp
+
+BeginCmp
+TimeStamp = /53144F7E;
+Reference = R3;
+ValeurCmp = RES_VAR;
+IdModule  = C1-1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5314886A;
+Reference = SF1;
+ValeurCmp = SF;
+IdModule  = AK300-2;
+EndCmp
+
+BeginCmp
+TimeStamp = /531471A4;
+Reference = SP1;
+ValeurCmp = SPEAKER;
+IdModule  = C2;
+EndCmp
+
+BeginCmp
+TimeStamp = /53144C4E;
+Reference = VT1;
+ValeurCmp = КТ315;
+IdModule  = TO220_VERT;
+EndCmp
+
+BeginCmp
+TimeStamp = /53144DB0;
+Reference = XS1;
+ValeurCmp = Питание;
+IdModule  = AK300-2;
+EndCmp
+
+BeginCmp
+TimeStamp = /53144DCE;
+Reference = XS3;
+ValeurCmp = Кнопки;
+IdModule  = C2;
+EndCmp
+
+EndListe
