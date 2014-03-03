@@ -1,4 +1,4 @@
-update=03.03.2014 11:30:26
+update=03.03.2014 13:12:02
 version=1
 last_client=eeschema
 [cvpcb]
@@ -85,3 +85,4 @@ LibName28=atmel
 LibName29=contrib
 LibName30=valves
 LibName31=gost
+LibName32=mixture
