@@ -16,12 +16,6 @@
 
 .equ  N_NOTE  = 6
 
-
-.macro  doortest ; if key pressed - stop 
-  sbic PINB, 2  
-  rjmp wait
-.endm
-
 ;----------------------------------------------------------;
 ; Work Area
 
@@ -75,8 +69,8 @@ reset:
 
 ; outi  OSCCAL, 172   ;Adjust OSCCAL if needed.
 
-  outi  PORTB, 0b001101   ;Initalize Port B
-  outi  DDRB,  0b010010   ;/
+  outi  PORTB, 0b001001   ;Initalize Port B
+  outi  DDRB,  0b010110   ;/
 
   outi  PLLCSR, 0b00000110  ;Initialize TC1 in 250 kHz fast PWM mode.
   outi  TCCR1,  0b01100001  ;Connect TC1 to OC1A
@@ -87,11 +81,20 @@ reset:
   outi  TCCR0B, 0b00000010
   outi  TIMSK, (1<<OCIE0A)
 
-wait:
+start:
   cli
+
+wait:
+  sbic PINB, 2 ; copy in2 to out3
+  sbi PORTB, 3
+  sbis PINB, 2 
+  cbi PORTB, 3
+
   sbis PINB, 0 
   rjmp wait
-  doortest
+  sbic PINB, 2  ; block input
+  rjmp wait
+
 
 start_play:
   ldiw  Z, score*2
@@ -112,7 +115,10 @@ pl_note:
   cpi CL, EoS
   breq  wait
 
-  doortest
+
+  sbic PINB, 2 
+  rjmp start
+
 
   mov AL, CL
   rcall note_on
