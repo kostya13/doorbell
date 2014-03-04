@@ -1,0 +1,206 @@
+PCBNEW-LibModule-V1  Вт. 04 марта 2014 23:35:59
+# encoding utf-8
+Units mm
+$INDEX
+dip8-soic
+kt315
+res-var
+terminal-2pin
+$EndINDEX
+$MODULE dip8-soic
+Po -0.064 -0.476 0 15 53162763 00000000 ~P
+Li dip8-soic
+Cd 8 pins DIL package, elliptical pads
+Kw DIL
+Sc 0
+AR /53144C5D
+Op 0 0 0
+T0 -6.35 0 1.778 1.143 900 0.3048 N V 21 N "DD1"
+T1 0 0 1.778 1.016 0 0.3048 N V 21 N "ATTINY45"
+DS 7 7 7 -7 0.3 21
+DS 7 -7 -11 -7 0.3 21
+DS -11 -7 -11 7 0.3 21
+DS -11 7 7 7 0.3 21
+DS -5.08 -1.27 -3.81 -1.27 0.381 21
+DS -3.81 -1.27 -3.81 1.27 0.381 21
+DS -3.81 1.27 -5.08 1.27 0.381 21
+DS -5.08 -2.54 5.08 -2.54 0.381 21
+DS 5.08 -2.54 5.08 2.54 0.381 21
+DS 5.08 2.54 -5.08 2.54 0.381 21
+DS -5.08 2.54 -5.08 -2.54 0.381 21
+$PAD
+Sh "1" R 1.5748 2.286 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 6 "V+"
+Po -3.81 3.81
+$EndPAD
+$PAD
+Sh "2" O 1.5748 2.286 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 5 "N-000008"
+Po -1.27 3.81
+$EndPAD
+$PAD
+Sh "3" O 1.5748 2.286 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 1.27 3.81
+$EndPAD
+$PAD
+Sh "4" O 1.5748 2.286 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 1 "GND"
+Po 3.81 3.81
+$EndPAD
+$PAD
+Sh "5" O 1.5748 2.286 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 4 "N-000005"
+Po 3.81 -3.81
+$EndPAD
+$PAD
+Sh "6" O 1.5748 2.286 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 3 "N-000002"
+Po 1.27 -3.81
+$EndPAD
+$PAD
+Sh "7" O 1.5748 2.286 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 2 "N-0000010"
+Po -1.27 -3.81
+$EndPAD
+$PAD
+Sh "8" O 1.5748 2.286 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 6 "V+"
+Po -3.81 -3.81
+$EndPAD
+$SHAPE3D
+Na "dil/dil_8.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$EndMODULE dip8-soic
+$MODULE kt315
+Po 0 0 0 15 5316267F 00000000 ~~
+Li kt315
+Sc 0
+AR 
+Op 0 0 0
+T0 0.254 2.794 1 1 0 0.15 N V 21 N "kt315"
+T1 0.254 -2.794 1 1 0 0.15 N V 21 N "VAL**"
+DS -4.064 1.524 -4.064 -1.476 0.3 21
+DS -4.064 -1.476 3.936 -1.476 0.3 21
+DS 3.936 -1.476 3.936 1.524 0.3 21
+DS 3.936 1.524 -4.064 1.524 0.3 21
+$PAD
+Sh "1" C 1.8 1.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 2.54 0
+$EndPAD
+$PAD
+Sh "2" C 1.8 1.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$PAD
+Sh "3" C 1.8 1.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -2.54 0
+$EndPAD
+$EndMODULE kt315
+$MODULE res-var
+Po 0 0 0 15 531629D1 00000000 ~~
+Li res-var
+Cd Resistance variable / potentiometre
+Kw R
+Sc 0
+AR /53144F7E
+Op A A 0
+T0 0 -5.08 1.397 1.27 0 0.2032 N V 21 N "R2"
+T1 -0.254 5.207 1.397 1.27 0 0.2032 N V 21 N "1к"
+DA 0.5098 -3.4468 0.5098 -8.4468 900 0.3 21
+DA 0.5098 -3.4468 -4.4902 -3.4468 900 0.3 21
+DS -4.4902 3.5532 -4.4902 -3.4468 0.3 21
+DS -4.4902 3.5532 5.5098 3.5532 0.3 21
+DS 5.5098 3.5532 5.5098 -3.4468 0.3 21
+$PAD
+Sh "1" C 2 2 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 2 "N-000002"
+Po -1.954 -0.396
+$EndPAD
+$PAD
+Sh "2" C 2 2 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 1 "GND"
+Po 0.586 2.144
+$EndPAD
+$PAD
+Sh "3" C 2 2 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 3 "N-000004"
+Po 3.126 -0.396
+$EndPAD
+$SHAPE3D
+Na "discret/adjustable_rx2.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$EndMODULE res-var
+$MODULE terminal-2pin
+Po -0.4902 -0.4468 0 15 53162AD4 00000000 ~~
+Li terminal-2pin
+Cd Condensateur = 2 pas
+Kw C
+Sc 0
+AR /5314886A
+Op 0 0 0
+T0 0 -2 1.016 1.016 0 0.2032 N V 21 N "SF1"
+T1 0 2 1.016 1.016 0 0.2032 N I 21 N "SF"
+DS -5 -3.5 -5 3.5 0.3 21
+DS 5 3.5 5 -3.5 0.3 21
+DS -5.08 -3.413 4.953 -3.413 0.3 21
+DS 5.08 3.54 -4.953 3.54 0.3 21
+$PAD
+Sh "1" C 2 2 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 1 "GND"
+Po -2.54 0
+$EndPAD
+$PAD
+Sh "2" C 2 2 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 2 "N-000003"
+Po 2.54 0
+$EndPAD
+$SHAPE3D
+Na "discret/capa_2pas_5x5mm.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$EndMODULE terminal-2pin
+$EndLIBRARY
