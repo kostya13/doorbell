@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 03.03.2014 18:15:22
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 04.03.2014 15:31:45
 
 BeginCmp
 TimeStamp = /53144C5D;
@@ -10,35 +10,63 @@ EndCmp
 BeginCmp
 TimeStamp = /53144C3F;
 Reference = R1;
-ValeurCmp = RES;
-IdModule  = R4-5;
-EndCmp
-
-BeginCmp
-TimeStamp = /53145720;
-Reference = R2;
-ValeurCmp = RES;
+ValeurCmp = 5,1к;
 IdModule  = R4-5;
 EndCmp
 
 BeginCmp
 TimeStamp = /53144F7E;
+Reference = R2;
+ValeurCmp = 1к;
+IdModule  = RV2;
+EndCmp
+
+BeginCmp
+TimeStamp = /5315DB42;
 Reference = R3;
-ValeurCmp = RES_VAR;
-IdModule  = C1-1;
+ValeurCmp = 100;
+IdModule  = R4-5;
+EndCmp
+
+BeginCmp
+TimeStamp = /5315BF3A;
+Reference = R4;
+ValeurCmp = 100;
+IdModule  = R4-5;
+EndCmp
+
+BeginCmp
+TimeStamp = /5315E094;
+Reference = SA1;
+ValeurCmp = SA;
+IdModule  = C2;
 EndCmp
 
 BeginCmp
 TimeStamp = /5314886A;
 Reference = SF1;
 ValeurCmp = SF;
-IdModule  = AK300-2;
+IdModule  = C2;
 EndCmp
 
 BeginCmp
 TimeStamp = /531471A4;
 Reference = SP1;
 ValeurCmp = SPEAKER;
+IdModule  = C2;
+EndCmp
+
+BeginCmp
+TimeStamp = /5315DB48;
+Reference = VD1;
+ValeurCmp = LED;
+IdModule  = C2;
+EndCmp
+
+BeginCmp
+TimeStamp = /5315D934;
+Reference = VD2;
+ValeurCmp = LED;
 IdModule  = C2;
 EndCmp
 
@@ -53,14 +81,14 @@ BeginCmp
 TimeStamp = /53144DB0;
 Reference = XS1;
 ValeurCmp = Питание;
-IdModule  = AK300-2;
+IdModule  = C2;
 EndCmp
 
 BeginCmp
-TimeStamp = /53144DCE;
-Reference = XS3;
-ValeurCmp = Кнопки;
-IdModule  = C2;
+TimeStamp = /5315E124;
+Reference = XS2;
+ValeurCmp = пуск;
+IdModule  = 1pinsmall;
 EndCmp
 
 EndListe
