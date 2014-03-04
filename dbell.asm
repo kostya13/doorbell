@@ -69,8 +69,8 @@ reset:
 
 ; outi  OSCCAL, 172   ;Adjust OSCCAL if needed.
 
-  outi  PORTB, 0b001001   ;Initalize Port B
-  outi  DDRB,  0b010110   ;/
+  outi  PORTB, 0b000100   ;Initalize Port B
+  outi  DDRB,  0b011010   ;/
 
   outi  PLLCSR, 0b00000110  ;Initialize TC1 in 250 kHz fast PWM mode.
   outi  TCCR1,  0b01100001  ;Connect TC1 to OC1A
@@ -113,8 +113,7 @@ pl_next:
 pl_note:
   lpm CL, Z+
   cpi CL, EoS
-  breq  wait
-
+  breq  start
 
   sbic PINB, 2 
   rjmp start
