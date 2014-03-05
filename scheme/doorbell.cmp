@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-jul-07)-stable date = Вт. 04 марта 2014 23:36:59
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 05.03.2014 17:40:33
 
 BeginCmp
 TimeStamp = /53144C5D;
@@ -11,7 +11,7 @@ BeginCmp
 TimeStamp = /53144C3F;
 Reference = R1;
 ValeurCmp = 5,1к;
-IdModule  = R4-5;
+IdModule  = R3;
 EndCmp
 
 BeginCmp
@@ -25,21 +25,28 @@ BeginCmp
 TimeStamp = /5315DB42;
 Reference = R3;
 ValeurCmp = 100;
-IdModule  = R4-5;
+IdModule  = R3;
 EndCmp
 
 BeginCmp
 TimeStamp = /5315BF3A;
 Reference = R4;
 ValeurCmp = 100;
-IdModule  = R4-5;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /5315E669;
+Reference = R5;
+ValeurCmp = 3,6к;
+IdModule  = R3;
 EndCmp
 
 BeginCmp
 TimeStamp = /5315E094;
 Reference = SA1;
 ValeurCmp = SA;
-IdModule  = C2;
+IdModule  = SIL-2;
 EndCmp
 
 BeginCmp
@@ -53,21 +60,21 @@ BeginCmp
 TimeStamp = /531471A4;
 Reference = SP1;
 ValeurCmp = SPEAKER;
-IdModule  = C2;
+IdModule  = SIL-2;
 EndCmp
 
 BeginCmp
 TimeStamp = /5315DB48;
 Reference = VD1;
-ValeurCmp = LED;
-IdModule  = C2;
+ValeurCmp = красный;
+IdModule  = SIL-2;
 EndCmp
 
 BeginCmp
 TimeStamp = /5315D934;
 Reference = VD2;
-ValeurCmp = LED;
-IdModule  = C2;
+ValeurCmp = зеленый;
+IdModule  = SIL-2;
 EndCmp
 
 BeginCmp
@@ -88,7 +95,7 @@ BeginCmp
 TimeStamp = /5315E124;
 Reference = XS2;
 ValeurCmp = пуск;
-IdModule  = 1pinsmall;
+IdModule  = SIL-1;
 EndCmp
 
 EndListe
