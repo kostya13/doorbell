@@ -64,3 +64,35 @@ http://elm-chan.org/works/mxb/mg.mpg
 Несложно доработать прошивку таким образом, чтобы она воспроизводила несколько мелодий.
 В Attiny45 можно записать 2 короткие мелодии. Если надо больше мелодий, можно применить
 Attiny85 с 8кб флеш памяти. 
+
+
+
+
+
+
+avrdude: reading lfuse memory:
+
+Reading | ################################################## | 100% 0.01s
+
+avrdude: writing output file "<stdout>"
+:01000000D12E
+:00000001FF
+avrdude: reading hfuse memory:
+
+Reading | ################################################## | 100% 0.01s
+
+avrdude: writing output file "<stdout>"
+:01000000DD22
+:00000001FF
+avrdude: reading efuse memory:
+
+Reading | ################################################## | 100% 0.01s
+
+avrdude: writing output file "<stdout>"
+:01000000FF00
+:00000001FF
+
+
+
+
+
