@@ -37,7 +37,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "8 mar 2014"
+Date "10 mar 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -50,7 +50,7 @@ L RES R1
 U 1 1 53144C3F
 P 5800 4400
 F 0 "R1" V 6350 4575 60  0000 C CNN
-F 1 "5,1к" V 6200 4175 60  0000 C CNN
+F 1 "3,6к" V 6200 4175 60  0000 C CNN
 F 2 "" H 5800 4400 60  0000 C CNN
 F 3 "" H 5800 4400 60  0000 C CNN
 	1    5800 4400
@@ -278,29 +278,17 @@ F 3 "" H 4025 4650 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3150 2775 3350 2775
-Wire Wire Line
-	3350 2775 4275 2775
-Wire Wire Line
-	4275 2775 4325 2775
+	3150 2775 4325 2775
 Wire Wire Line
 	5325 2775 5450 2775
 Wire Wire Line
-	5325 2175 6550 2175
-Wire Wire Line
-	6550 2175 6925 2175
+	5325 2175 6925 2175
 Wire Wire Line
 	7350 4850 7350 4700
 Wire Wire Line
 	7025 1600 7025 1200
 Wire Wire Line
-	3350 2175 3475 2175
-Wire Wire Line
-	3475 2175 3875 2175
-Wire Wire Line
-	3875 2175 4100 2175
-Wire Wire Line
-	4100 2175 4325 2175
+	3350 2175 4325 2175
 Wire Wire Line
 	3875 2175 3875 2000
 Wire Wire Line
@@ -335,7 +323,7 @@ Wire Wire Line
 Wire Wire Line
 	3350 2775 3350 2375
 Wire Wire Line
-	3475 3075 3475 2175
+	3475 1700 3475 3075
 Wire Wire Line
 	3350 2175 3350 2275
 Connection ~ 3475 2175
@@ -392,9 +380,7 @@ F 3 "" H 6550 3675 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6550 3675 6550 3450
-Wire Wire Line
-	6550 3450 6550 2975
+	6550 2975 6550 3675
 Wire Wire Line
 	6000 3450 6550 3450
 Connection ~ 6550 3450
@@ -402,4 +388,22 @@ Wire Wire Line
 	5800 3600 5800 3600
 Wire Wire Line
 	5800 3600 5800 3450
+$Comp
+L CONN_02_F XS3
+U 1 1 531E09E3
+P 3325 1700
+F 0 "XS3" H 3575 1800 60  0000 C CNN
+F 1 "питание радиомодуля" H 3675 1500 60  0000 C CNN
+F 2 "" H 3325 1700 60  0000 C CNN
+F 3 "" H 3325 1700 60  0000 C CNN
+	1    3325 1700
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	3325 1700 3475 1700
+Wire Wire Line
+	3325 1800 3600 1800
+Wire Wire Line
+	3600 1800 3600 2775
+Connection ~ 3600 2775
 $EndSCHEMATC

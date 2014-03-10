@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 05.03.2014 17:40:33
+Cmp-Mod V01 Created by CvPcb (2013-jul-07)-stable date = Пн. 10 марта 2014 22:52:32
 
 BeginCmp
 TimeStamp = /53144C5D;
@@ -10,7 +10,7 @@ EndCmp
 BeginCmp
 TimeStamp = /53144C3F;
 Reference = R1;
-ValeurCmp = 5,1к;
+ValeurCmp = 3,6к;
 IdModule  = R3;
 EndCmp
 
@@ -96,6 +96,13 @@ TimeStamp = /5315E124;
 Reference = XS2;
 ValeurCmp = пуск;
 IdModule  = SIL-1;
+EndCmp
+
+BeginCmp
+TimeStamp = /531E09E3;
+Reference = XS3;
+ValeurCmp = питание радиомодуля;
+IdModule  = SIL-2;
 EndCmp
 
 EndListe
