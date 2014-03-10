@@ -6,4 +6,7 @@ $(target).hex: $(target).asm river-flows.asm
 load: $(target).hex
 	avrdude -V -p t45 -c usbasp -U flash:w:$(target).hex  
 
-.PHONY: load
+fuses:
+	avrdude -V -p t45 -c usbasp -U lfuse:w:0xd1:m -U hfuse:w:0xdd:m -U efuse:w:0xff:m   
+
+.PHONY: load, fuses
