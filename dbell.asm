@@ -1,6 +1,6 @@
 ;----------------------------------------------------------;
 ; Melody Generator  (C)ChaN, 2005
-
+; Доработка для дверного звонка: Ильяшенко Константин <kx13@ya.ru> 2014        
 
 .include "tn45def.inc"  ;This is included in "Atmel AVR Studio"
 .include "avr.inc"
@@ -62,14 +62,14 @@ reset:
 
   clr _0
   ldiw  X, RAMTOP   ;Clear RAM
-  ldi AL, 0     ;
-  st  X+, _0      ;
-  dec AL      ;
-  brne  PC-2      ;/
+  ldi AL, 0 
+  st  X+, _0
+  dec AL    
+  brne  PC-2     
 
 ; outi  OSCCAL, 172   ;Adjust OSCCAL if needed.
 
-  outi  PORTB, 0b000100   ;Initalize Port B
+  outi  PORTB, 0b000100   ; Инициализация прота В
   outi  DDRB,  0b011010   ;/
 
   outi  PLLCSR, 0b00000110  ;Initialize TC1 in 250 kHz fast PWM mode.
@@ -81,18 +81,19 @@ reset:
   outi  TCCR0B, 0b00000010
   outi  TIMSK, (1<<OCIE0A)
 
-start:
+start: 
   cli
 
-wait:
-  sbic PINB, 2 ; copy in2 to out3
+wait:  ; главный цикл ожидания нажатия кнопки
+  sbic PINB, 2 ; копируется состояние входа PB2 в выход PB3
   sbi PORTB, 3
   sbis PINB, 2 
   cbi PORTB, 3
 
-  sbis PINB, 0 
-  rjmp wait
-  sbic PINB, 2  ; block input
+  sbis PINB, 0 ; проверяется нажата ли клавиша звонка
+  rjmp wait    ; если не нажата, ждем дальше
+
+  sbic PINB, 2  ; здесь проверяется значения входа блокировки звонка
   rjmp wait
 
 
@@ -115,8 +116,8 @@ pl_note:
   cpi CL, EoS
   breq  start
 
-  sbic PINB, 2 
-  rjmp start
+  sbic PINB, 2 ; Если обнаружен высокий уровень на входе блокирования
+  rjmp start   ; перейти в режим ожидания. Мелодия остановится.
 
 
   mov AL, CL
@@ -269,7 +270,7 @@ tone_lp:
 ;--------------------------------------------------------------------;
 ; Score table
 ;--------------------------------------------------------------------;
-
+; Здесь добавляется файл с мелодией
 score:
 .include "river-flows.asm"
 
